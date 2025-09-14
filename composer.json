@@ -1,0 +1,15 @@
+{
+    "name": "taked/qiita-trend-bot2",
+    "autoload": {
+        "psr-4": {
+            "Taked\\QiitaTrendBot2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sotuken2024",
+            "email": "sc34034@info.sangitan.ac.jp"
+        }
+    ],
+    "require": {}
+}
