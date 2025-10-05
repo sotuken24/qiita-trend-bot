@@ -11,5 +11,7 @@
             "email": "sc34034@info.sangitan.ac.jp"
         }
     ],
-    "require": {}
+    "require": {
+        "linecorp/line-bot-sdk": "^11.3"
+    }
 }

@@ -13,8 +13,17 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+    ->withSchedule(function ($schedule) {
+        // 毎朝9:00にコンソールコマンドを実行（タイムゾーンはアプリ設定に依存）
+        $schedule->command('QiitaTrendSendAction')->dailyAt('09:00');
+    })
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
+
+        // CSRF保護をLINE Webhookから除外
+        $middleware->validateCsrfTokens(except: [
+            'line/webhook',
+        ]);
 
         $middleware->web(append: [
             HandleAppearance::class,

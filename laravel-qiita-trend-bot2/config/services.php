@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+        'line' => [
+        'channel_token' => env('LINE_CHANNEL_ACCESS_TOKEN'),
+        'channel_secret' => env('LINE_CHANNEL_SECRET'),
+        'user_id' => env('LINE_USER_ID'),
+    ],
+
+
 ];
